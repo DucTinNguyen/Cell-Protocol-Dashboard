@@ -9,6 +9,7 @@ const neueHass = localFont({
 
 import "./globals.css";
 import AppWalletProvider from "@/providers/wallet.provider";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "DeBio",
@@ -23,7 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${neueHass.variable}`}>
         <AppWalletProvider>
-          {children}
+          <Suspense>
+            {children}
+          </Suspense>
         </AppWalletProvider>
       </body>
     </html>
