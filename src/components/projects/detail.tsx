@@ -50,7 +50,7 @@ const ProjectDetail = ({ projectId }: { projectId: number }) => {
                       <div>
                           <h3 className='text-2xl font-normal font-marbold uppercase text-[#F7FDFD]'>{project?.title}</h3>
                           <p className='text-base font-medium text-[#E0DDD9] my-3'>{project?.desc}</p>
-                          <p className='flex items-center gap-x-2'>
+                          <p className='flex flex-wrap items-center gap-2'>
                               {project?.category.map((text, index) => {
                                   return (
                                       <span
@@ -63,7 +63,7 @@ const ProjectDetail = ({ projectId }: { projectId: number }) => {
                           </p>
                       </div>
                   </div>
-                  <div className='flex flex-wrap px-2 justify-center lg:justify-start gap-2 mt-6'>
+                  <div className='flex flex-col sm:flex-wrap sm:flex-row px-2 justify-start gap-2 mt-6'>
                       {infor.map((item, index) => { 
                           return (
                               <div key={index} className='rounded-lg border border-[#3C3C3C] bg-[#0C0D0D] px-4 py-3 min-w-[160px]'>
