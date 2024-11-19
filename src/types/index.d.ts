@@ -1,6 +1,6 @@
 export interface ISlider {
     thumbnail: string | StaticImageData;
-    logo: string;
+    logo: string | StaticImageData;
     type: string;
     title: string;
     desc: string;

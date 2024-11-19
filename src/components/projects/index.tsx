@@ -101,7 +101,7 @@ const Projects = () => {
                   <figure className='w-8 h-8'>
                       <Image src={icPara} alt='icon'/>
                   </figure>
-                  <span className='text-[#F7FDFD] text-2xl font-normal uppercase'>DEBIO projects</span>
+                  <span className='text-[#F7FDFD] text-2xl font-normal font-marbold uppercase'>projects</span>
               </div>
               <p className='text-[#798675] text-sm font-semibold mt-4'>Filter and interact with the world of DeBio. All projects are listed by communities and approved by DeBioWorld.</p>
           </section>

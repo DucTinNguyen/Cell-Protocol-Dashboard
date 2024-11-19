@@ -15,7 +15,8 @@ const config: Config = {
         "category-gradient": "linear-gradient(90deg, rgba(140, 227, 57, 0.40) -5.56%, rgba(140, 227, 57, 0.00) 100%), rgba(255, 255, 255, 0.20)",
       },
       fontFamily: {
-        nuku: ['var(--font-neueHass)'],
+        neueHass: ['var(--font-neueHass)'],
+        marbold: ['var(--font-marbold)'],
       },
     },
   },

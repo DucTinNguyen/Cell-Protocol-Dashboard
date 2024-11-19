@@ -7,6 +7,12 @@ const neueHass = localFont({
   display: "swap",
 });
 
+const marbold = localFont({
+  src: "../../public/fonts/MarboldNormal-Kd2Z.woff2",
+  variable: "--font-marbold",
+  display: "swap",
+});
+
 import "./globals.css";
 import AppWalletProvider from "@/providers/wallet.provider";
 import { Suspense } from "react";
@@ -22,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${neueHass.variable}`}>
+      <body className={`${marbold.variable} ${neueHass.variable}`}>
         <AppWalletProvider>
           <Suspense>
             {children}

@@ -2,7 +2,7 @@ import React from 'react'
 import Slider from '../slider'
 import { ISlider, Job, SwiperType } from '@/types'
 import thumbnail from '@/images/slider/bg-thumbnail.png'
-import avatar from '@/images/slider/avatar.png'
+import avatar from '@/images/slider/avatar1.png'
 import Image from 'next/image'
 import icPara from '@/images/ic-para.svg'
 import JobBoardItem from './item'
@@ -12,7 +12,7 @@ const JobBoard = () => {
   const array: ISlider[] = [
     {
       thumbnail: thumbnail,
-      logo: avatar.src,
+      logo: avatar,
       type: 'CoopHive',
       title: 'Staff front end engineer',
       desc: `We are seeking a passionate and detail-oriented Front-End Engineer to develop and maintain high-quality user interfaces for DeBio's web applications. You will collaborate closely with our design and backend teams to create responsive, intuitive, and visually appealing web experiences. `,
@@ -20,7 +20,7 @@ const JobBoard = () => {
     },
     {
       thumbnail: thumbnail,
-      logo: avatar.src,
+      logo: avatar,
       type: 'CoopHive',
       title: 'Staff back end engineer',
       desc: `We are seeking a passionate and detail-oriented Front-End Engineer to develop and maintain high-quality user interfaces for DeBio's web applications. You will collaborate closely with our design and backend teams to create responsive, intuitive, and visually appealing web experiences. `,
@@ -76,7 +76,7 @@ const JobBoard = () => {
           <figure className='w-8 h-8'>
             <Image src={icPara} alt='icon' />
           </figure>
-          <span className='text-[#F7FDFD] text-2xl font-normal uppercase'>Job board</span>
+          <span className='text-[#F7FDFD] text-2xl font-normal uppercase font-marbold'>Job board</span>
         </div>
         <p className='text-[#798675] text-sm font-semibold mt-4'>Find trusted work opportunities and work with the best companies in DeBio. Applications for listed jobs are currently facilitated through external links.</p>
       </section>
