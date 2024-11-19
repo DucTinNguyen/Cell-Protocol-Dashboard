@@ -62,7 +62,7 @@ export function CarouselProjectDetail() {
             <div className="flex items-center gap-x-2 mt-6">
                 {arrayImages.map((item, index) => {
                     return (
-                        <section key={index} className={`${index === current - 1 ? 'border-[#D3FF33]' : 'border-transparent'} border w-[127px] h-[88px] rounded-lg overflow-hidden relative flex items-center justify-center`}>
+                        <section onClick={()=>{setCurrent(index +1)}} key={index} className={`${index === current - 1 ? 'border-[#D3FF33]' : 'border-transparent'} border w-[127px] h-[88px] rounded-lg overflow-hidden relative flex items-center justify-center`}>
                             <Image src={item} alt="image" fill />
                             <div style={{
                                 background: 'rgba(56, 56, 56, 0.20)'
