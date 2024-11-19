@@ -8,6 +8,7 @@ export interface ISlider {
 }
 
 export interface IProduct {
+    id: number;
     thumbnail: string | StaticImageData;
     logo: string | StaticImageData;
     type: string;

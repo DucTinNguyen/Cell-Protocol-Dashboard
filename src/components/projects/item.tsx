@@ -1,11 +1,18 @@
+'use client'
 import React from 'react'
 import item1 from '@/images/projects/Main Image.png'
 import icon1 from '@/images/projects/image.png'
 import Image from 'next/image'
 import { IProduct } from '@/types'
-const ProjectItem = ({product}:{product: IProduct}) => {
+import { useRouter } from 'next/navigation'
+const ProjectItem = ({ product }: { product: IProduct }) => {
+    
+    const router = useRouter();
+
   return (
-    <main className='h-[312px] flex flex-col rounded-lg'>
+      <main
+          onClick={()=>{router.push(`?tab=projects&id=${product.id}`)}}
+          className='h-[312px] flex flex-col rounded-lg cursor-pointer'>
           <figure className='w-full h-[120px]'>
               <Image src={product.thumbnail} alt='item'/>
           </figure>   
