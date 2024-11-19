@@ -40,17 +40,16 @@ export function CarouselProjectDetail() {
     return (
         <main className="my-6 mx-auto relative z-10">
             <section
-               
-                className="w-[684px] h-[384px] relative flex items-center justify-center rounded-3xl overflow-hidden">
+                className="w-full lg:w-[684px] h-[277px] lg:h-[384px] relative flex items-center justify-center rounded-3xl overflow-hidden">
                 <Image src={arrayImages[0]} alt="image" fill />
                 <div style={{
                     background: 'rgba(56, 56, 56, 0.20)'
                 }} className="backdrop-blur-[50px] absolute w-full h-full left-0 top-0"></div>
-                <Carousel setApi={setApi} className="w-[552px] h-[384px] mx-auto">
+                <Carousel setApi={setApi} className="w-[250px] h-[277px] flex items-center lg:w-[552px] lg:h-[384px] mx-auto relative">
                     <CarouselContent>
                         {arrayImages.map((_, index) => (
                             <CarouselItem key={index}>
-                                <Image className="w-full h-full" src={arrayImages[current-1]} alt="image" />
+                                <Image className="w-full h-full"  src={arrayImages[current-1]} alt="image" />
                             </CarouselItem>
                         ))}
                     </CarouselContent>

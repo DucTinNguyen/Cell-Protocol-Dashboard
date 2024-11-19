@@ -24,10 +24,10 @@ const ProjectDetail = ({ projectId }: { projectId: number }) => {
     ]
 
   return (
-      <main className='lg:w-[1100px] mx-auto'>
+      <main className='lg:w-[1100px] mx-auto pb-20 lg:pb-0 px-4 lg:px-0'>
           <Image src={bgDetail} alt='bg detail' className='absolute top-0 left-1/2 -translate-x-1/2 w-full' />
-          <section className='relative flex gap-x-6'>
-              <div className='grow'>
+          <section className='relative flex-col lg:flex-row flex gap-x-6'>
+              <div className='grow py-3'>
                   <div className='flex items-center gap-x-3'>
                       <figure className='w-[120px] h-[120px] flex items-center justify-center'>
                           <Image src={project?.logo} alt='product'/>
@@ -48,7 +48,7 @@ const ProjectDetail = ({ projectId }: { projectId: number }) => {
                           </p>
                       </div>
                   </div>
-                  <div className='flex gap-x-2 mt-6'>
+                  <div className='flex flex-wrap px-2 justify-center lg:justify-start gap-2 mt-6'>
                       {infor.map((item, index) => { 
                           return (
                               <div key={index} className='rounded-lg border border-[#3C3C3C] bg-[#0C0D0D] px-4 py-3 min-w-[160px]'>
@@ -67,7 +67,7 @@ const ProjectDetail = ({ projectId }: { projectId: number }) => {
 
               </div>
 
-              <div className='w-[300px] h-fit p-6 z-10 rounded-2xl border border-[rgba(255,255,255,0.12)] bg-[rgba(25,25,25,0.3)] backdrop-blur-sm'>
+              <div className='w-full lg:w-[300px] h-fit p-6 z-10 rounded-2xl border border-[rgba(255,255,255,0.12)] bg-[rgba(25,25,25,0.3)] backdrop-blur-sm'>
                   <p className='text-base font-normal font-marbold uppercase text-[#F7FDFD]'>Support MoonDAO</p>
                   <p className='text-base font-medium text-[#798675] my-3'>Explore and engage with MoonDAO via the provided links.</p>
                   <button

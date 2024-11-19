@@ -54,7 +54,7 @@ const Projects = () => {
   ];
 
   return (
-    <main className="text-white lg:w-[1008px] mx-auto pb-10 lg:pb-0">
+    <main className="text-white lg:w-[1008px] mx-auto pb-20 lg:pb-0">
       <section className="h-[350px] lg:h-[390px]">
         <Slider data={array} type={1} />
       </section>
