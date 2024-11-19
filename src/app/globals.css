@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255; */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0; */
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.invis-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.invis-scroll {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+
+/* swipper css */
+.swiper-pagination {
+  height: 40px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 8px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.swiper .swiper-pagination-bullet {
+  display: inline-block;
+  width: 50px !important;
+  height: 8px !important;
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 100px;
+}
+
+.swiper .swiper-pagination-bullet-active {
+  background-color: #F7FDFD;
+}
+
+.swiper-button-prev {
+  border-radius: 56px;
+  border: 0.5px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.10);
+  box-shadow: 0px 3px 0px -2px rgba(255, 255, 255, 0.10) inset;
+  backdrop-filter: blur(8px);
+  height: 40px;
+  width: 80px;
+  position: absolute;
+  bottom: 0px;
+  right: 90px;
+  background-image: url('../../public/images/slider/btn-prev.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  z-index: 10;
+}
+.swiper-button-next {
+  border-radius: 56px;
+  border: 0.5px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.10);
+  box-shadow: 0px 3px 0px -2px rgba(255, 255, 255, 0.10) inset;
+  backdrop-filter: blur(8px);
+  height: 40px;
+  width: 80px;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  background-image: url('../../public/images/slider/btn-next.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  z-index: 10;
+}
