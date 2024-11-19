@@ -3,13 +3,13 @@
 
 
 export const menus = [
-    { title: 'home', hash: 'home' },
-    { title: 'projects', hash: 'projects' },
-    { title: 'event calendar', hash: 'event-calendar' },
-    { title: 'deBio map', hash: 'debio-map' },
-    { title: 'job board', hash: 'job-board' },
-    { title: 'nfts', hash: 'nfts' },
-    { title: 'app store', hash: 'app-store' },
-    { title: 'P2P marketplace', hash: 'p2p-marketplace' },
-    { title: 'resources', hash: 'resources' }
+    { title: 'home', hash: 'home', disable: true },
+    { title: 'projects', hash: 'projects' , disable: false},
+    { title: 'event calendar', hash: 'event-calendar', disable: true },
+    { title: 'deBio map', hash: 'debio-map', disable: true },
+    { title: 'job board', hash: 'job-board', disable: false  },
+    { title: 'nfts', hash: 'nfts', disable: true },
+    { title: 'app store', hash: 'app-store', disable: true },
+    { title: 'P2P marketplace', hash: 'p2p-marketplace', disable: true },
+    { title: 'resources', hash: 'resources', disable: true }
 ]

@@ -9,6 +9,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { menus } from '@/utils/menu';
 import BtnCreate from '../button/btn-create';
 import { SidebarContext } from '@/providers/side-bar.provider';
+import { IconItem } from './icons';
 
 const SideBar = () => {
     const { activeTab, setActiveTab } = useContext(SidebarContext)!;
@@ -30,15 +31,16 @@ const SideBar = () => {
           <section className='mt-10 relative z-[2]'>
               {menus.map((menu, index) => (
                   <button
-                      disabled={index !== 1 && index !== 4}
+                      disabled={menu.disable}
                       onClick={() => handleActiveTab(index)}
                       key={index}
                       className={`${index !== 1 && index !== 4 ? 'cursor-not-allowed' : ''} 
               ${menu.hash === activeTab ? 'bg-[rgba(255,255,255,0.05)] border-[rgba(255,255,255,0.08)]' : 'border-transparent'} 
               w-full flex cursor-pointer py-3 px-4 items-center gap-x-2 rounded-lg border-[2px]`}
                   >
-                      <IconHome isActive={menu.hash === activeTab} />
-                      <span className={`${menu.hash === activeTab ? 'text-[#8CE339]' : 'text-[#798675]'} text-sm font-semibold capitalize`}>
+                      {/* <IconHome isActive={menu.hash === activeTab} /> */}
+                      <IconItem index={index} isActive={menu.hash === activeTab} />
+                      <span className={`${menu.hash === activeTab ? 'text-[#8CE339]' : 'text-[#798675]'} ${menu.disable && 'opacity-50'} text-sm font-semibold capitalize`}>
                           {menu.title}
                       </span>
                   </button>

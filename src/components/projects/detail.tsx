@@ -1,12 +1,14 @@
+'use client'
 import React from 'react'
 import bgDetail from '@/images/bg-detail.png'
 import Image from 'next/image'
 import { products } from '@/utils/project'
 import { CarouselProjectDetail } from './gallery'
+import { useRouter } from 'next/navigation'
 const ProjectDetail = ({ projectId }: { projectId: number }) => {
     
     const project = products.find(product => product.id === projectId);
-
+    const router = useRouter();
     const infor = [
         {
             title: 'City',
@@ -23,9 +25,22 @@ const ProjectDetail = ({ projectId }: { projectId: number }) => {
 
     ]
 
+    const handleBack = () => { 
+        router.push(`?tab=project`)
+    }
+
+
   return (
       <main className='lg:w-[1100px] mx-auto pb-20 lg:pb-0 px-4 lg:px-0'>
           <Image src={bgDetail} alt='bg detail' className='absolute top-0 left-1/2 -translate-x-1/2 w-full' />
+          <section onClick={handleBack} className='flex items-center gap-x-2 cursor-pointer relative py-2 lg:py-0'>
+              <figure className='w-12 h-12 rounded-full border border-[rgba(255,255,255,0.04)] bg-[rgba(255,255,255,0.1)] flex items-center justify-center'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                      <path d="M15 7L1 7M1 7L6.25 0.999999M1 7L6.25 13" stroke="#8CE339" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+              </figure>
+              <span className='text-[#8CE339] text-base font-normal'>Back</span>
+          </section>
           <section className='relative flex-col lg:flex-row flex gap-x-6'>
               <div className='grow py-3'>
                   <div className='flex items-center gap-x-3'>
