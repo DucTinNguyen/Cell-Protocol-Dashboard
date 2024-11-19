@@ -58,7 +58,7 @@ const Projects = () => {
       <section className="h-[350px] lg:h-[390px]">
         <Slider data={array} type={1} />
       </section>
-      <section className="w-full lg:w-[470px] px-4 lg:px-0 mt-8">
+      <section className="w-full lg:w-[470px] px-4 lg:px-0 mt-8 lg:mt-0">
         <div className="flex items-center gap-x-3">
           <figure className="w-8 h-8">
             <Image src={icPara} alt="icon" />

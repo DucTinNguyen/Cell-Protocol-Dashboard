@@ -71,11 +71,11 @@ const JobBoard = () => {
   ];
 
   return (
-    <main className="text-white lg:w-[1008px] mx-auto">
-      <section className="lg:h-[390px]">
+    <main className="text-white lg:w-[1008px] mx-auto pb-10 lg:pb-0">
+      <section className="h-[350px] lg:h-[390px]">
         <Slider data={array} type={2} />
       </section>
-      <section className="lg:w-[470px]">
+      <section className="w-full lg:w-[470px] px-4 lg:px-0 mt-8 lg:mt-0">
         <div className="flex items-center gap-x-3">
           <figure className="w-8 h-8">
             <Image src={icPara} alt="icon" />
@@ -92,10 +92,10 @@ const JobBoard = () => {
       </section>
       {/* TODO */}
       {/* search box */}
-      <div className="flex gap-4 w-full items-center justify-start mt-6">
+      <div className="flex px-4 lg:px-0 flex-col lg:flex-row gap-4 w-full items-center justify-start mt-6">
         <div
           className="flex items-center bg-[#1A1A1A] rounded-lg p-3 gap-4
-         md:w-[389px] md:h-[44px]
+        w-full md:w-[389px] md:h-[44px]
         "
         >
           <svg
@@ -165,11 +165,11 @@ const JobBoard = () => {
         </div>
       </div>
 
-      <section className="mt-6">
+      <section className="mt-6  px-4 lg:px-0">
         <p className="text-[#8CE339] text-sm font-semibold mb-6">
           3 jobs available
         </p>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {jobListings.map((job, index) => {
             return <JobBoardItem key={index} job={job} />;
           })}

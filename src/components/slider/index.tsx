@@ -63,16 +63,16 @@ const SwiperSlideProject = ({item}: {item: ISlider}) => {
 }
 
 const SwiperSlideJobBoard = ({ item }: { item: ISlider }) => {
-    return <main className='h-[320px] rounded-[32px] overflow-hidden relative p-10'>
-        <Image src={item.thumbnail} alt='thumbnail' fill />
-        <section className='relative flex items-center gap-x-8'>
-            <figure className='min-w-[160px] w-[160px] h-[160px] rounded-lg'>
-                <Image src={item.logo} alt='thumbnail' width={160} height={160} />
+    return <main className='h-[320px] lg:rounded-[32px] overflow-hidden relative p-6 lg:p-10'>
+        <Image src={item.thumbnail} alt='thumbnail' fill objectFit='cover' objectPosition='center' />
+        <section className='relative flex flex-col lg:flex-row items-start lg:items-center gap-x-8'>
+            <figure className='min-w-[80px] w-[80px] h-[80px] lg:min-w-[160px] lg:w-[160px] lg:h-[160px] rounded-lg'>
+                <Image src={item.logo} alt='thumbnail' className='w-full h-full'/>
             </figure>
             <div>
                 <p className='text-[#8CE339] text-base font-semibold mt-2'>{item.type}</p>
-                <p className='text-2xl text-[#F7FDFD] font-semibold uppercase my-2'>{item.title}</p>
-                <p className='text-sm text-[#F7FDFD] font-medium mt-2 mb-6'>{item.desc}</p>
+                <p className='text-lg lg:text-2xl text-[#F7FDFD] font-semibold uppercase my-2'>{item.title}</p>
+                <p className='text-xs lg:text-sm text-[#F7FDFD] font-medium mt-2 mb-2 lg:mb-6'>{item.desc}</p>
                 <p className='flex items-center gap-x-2'>
                     {item.category.map((text, index) => {
                         return (
