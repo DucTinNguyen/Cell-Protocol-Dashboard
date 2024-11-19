@@ -40,15 +40,15 @@ export default Slider
 
 
 const SwiperSlideProject = ({item}: {item: ISlider}) => {
-    return <section className='h-[320px] rounded-[32px] overflow-hidden relative p-10'>
-        <Image src={item.thumbnail} alt='thumbnail' fill />
-        <div className='relative'>
-            <figure className='w-[100px] h-[100px] rounded-full overflow-hidden'>
-                <Image src={item.logo} alt='thumbnail' width={100} height={100} />
+    return <section className='h-[320px] lg:rounded-[32px] overflow-hidden relative p-6 lg:p-10'>
+        <Image src={item.thumbnail} alt='thumbnail' fill objectFit='cover' objectPosition='center' />
+        <div className='relative pt-6 lg:pt-0'>
+            <figure className='w-10 h-10 lg:w-[100px] lg:h-[100px] rounded-full overflow-hidden'>
+                <Image src={item.logo} alt='thumbnail' className='w-full h-full' />
             </figure>
             <p className='text-[#8CE339] text-base font-semibold mt-2'>{item.type}</p>
             <p className='text-2xl text-[#F7FDFD] font-semibold uppercase my-2'>{item.title}</p>
-            <p className='text-sm text-[#F7FDFD] font-medium mt-2 mb-6'>{item.desc}</p>
+            <p className='text-sm text-[#F7FDFD] font-medium mt-2 mb-2 lg:mb-6 line-clamp-2'>{item.desc}</p>
             <p className='flex items-center gap-x-2'>
                 {item.category.map((text, index) => {
                     return (

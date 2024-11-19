@@ -41,13 +41,13 @@ export default function ModalConnectWallet({isOpen, setIsOpen}: {isOpen: boolean
                             <IoCloseCircleSharp onClick={close} color='#fff' className='absolute top-4 right-4 cursor-pointer' size={30}/>
                             <section className='py-10'>
                                 {
-                                    wallets.filter(wallet => wallet.readyState === 'Installed').map(wallet => {
+                                    wallets.filter(wallet => wallet.readyState === 'Installed').length > 0 ? wallets.filter(wallet => wallet.readyState === 'Installed').map(wallet => {
                                         return <button onClick={() => { handleConnectWallet(wallet.adapter.name) }}
                                             key={wallet.adapter.name} className='flex mb-2 cursor-pointer w-full py-3 px-4 items-center gap-x-2 rounded-lg bg-[rgba(255,255,255,0.05)] border-[rgba(255,255,255,0.08)]  border-[2px]'>
                                             <Image src={wallet.adapter.icon} alt={wallet.adapter.name} loader={() => wallet.adapter.icon} width={32} height={32} />
                                             <span className='text-white'>{wallet.adapter.name}</span>
                                         </button>
-                                    })
+                                    }) : <span className='text-white text-base text-center block'>No wallet is detected</span>
                                 }
                             </section>
                             
