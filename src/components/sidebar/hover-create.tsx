@@ -28,7 +28,7 @@ const list = [
 
 const PopHoverCreate = ({ isCreating }: { isCreating: boolean}) => {
   return (
-      <main className={`${isCreating ? 'opacity-100' : 'opacity-0'} z-10 transition-all ease-linear duration-200 h-[238px] w-[435px] bg-[rgba(255,255,255,0.05)] border-[2px] border-[rgba(255,255,255,0.08)] backdrop-blur-lg rounded-lg absolute bottom-[170px] left-6`}>
+      <main className={`${isCreating ? 'opacity-100 w-full md:w-[435px] h-[290px] md:h-[238px]' : 'opacity-0 w-0 h-0'} z-10 transition-all ease-linear duration-200   bg-[rgba(255,255,255,0.05)] border-[2px] border-[rgba(255,255,255,0.08)] backdrop-blur-lg rounded-lg absolute bottom-[115px] lg:bottom-[170px] left-6`}>
         <section className='py-6 px-4 flex flex-col gap-y-6'>
               {list.map((item, index) => {
                   return (
@@ -40,7 +40,7 @@ const PopHoverCreate = ({ isCreating }: { isCreating: boolean}) => {
                                   <span className='text-[#798675] text-sm font-semibold'>{item.desc}</span>
                               </p>
                           </div>
-                          {item.isComing && <span className='inline-block bg-[#8CE339] shadow-[0px_4px_32px_0px_rgba(204,255,123,0.7)] text-xs text-[#2F590F] font-semibold px-2 py-1 rounded-full' >Coming soon</span>}
+                          {item.isComing && <span className='inline-block bg-[#8CE339] text-center shadow-[0px_4px_32px_0px_rgba(204,255,123,0.7)] text-xs text-[#2F590F] font-semibold px-2 py-1 rounded-full' >Coming soon</span>}
                     </div>
                 )
             })}

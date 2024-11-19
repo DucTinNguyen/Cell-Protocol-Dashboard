@@ -27,7 +27,7 @@ const BtnConnectWallet = ({ className }: { className?: string }) => {
       <>    
             <button
                 onClick={handleOnclick}
-                className={`${className} rounded-lg text-[#003304] text-lg font-semibold h-[48px] py-2 border-[3px] border-[#D3FF33] bg-white shadow-[0px_0px_40px_5px_rgba(140,227,57,0.40)]`}
+                className={`${className} rounded-lg text-[#003304] text-sm md:text-lg font-semibold h-[48px] py-2 border-[3px] border-[#D3FF33] bg-white shadow-[0px_0px_40px_5px_rgba(140,227,57,0.40)]`}
             >
                 {publicKey? shortAddress(publicKey.toString()): 'Connect Wallet'}
             </button>

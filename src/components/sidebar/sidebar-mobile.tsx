@@ -4,13 +4,13 @@ import React, { useContext, useEffect, useState } from 'react'
 import ic_logo from '@/images/logo.svg'
 import IconHome from './icons/home';
 import bgSidebar from '@/images/bg-sidebar.png'
-import BtnConnectWallet from '../button/connect-wallet';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { menus } from '@/utils/menu';
 import BtnCreate from '../button/btn-create';
 import { SidebarContext } from '@/providers/side-bar.provider';
 
-const SideBar = () => {
+const SideBarMobile = ({ isOpen }: { isOpen: boolean }) => {
+    
     const { activeTab, setActiveTab } = useContext(SidebarContext)!;
     const router = useRouter();
 
@@ -19,14 +19,17 @@ const SideBar = () => {
         setActiveTab(newTab);
         router.push(`?tab=${newTab}`);
     };
+
+
+
   return (
-      <main className='py-8 px-6 bg-[#090909] w-[272px] h-svh relative hidden lg:block'>
+      <main className={`${isOpen ? 'w-[272px] opacity-100 left-0' : 'w-0 opacity-0 left-[-100px]'} transition-all ease-linear duration-150 py-8 px-6 bg-[#090909] z-20 fixed top-0 min-h-screen h-full`}>
           <section className='flex items-center gap-x-3 cursor-pointer'>
               <figure>
-                  <Image src={ic_logo} alt='icon logo' width={32} height={32}/>
+                  <Image src={ic_logo} alt='icon logo' width={32} height={32} />
               </figure>
               <span className='lg:text-xl text-[#fff] font-normal font-marbold'>CELL PROTOCOL</span>
-          </section>      
+          </section>
           <section className='mt-10 relative z-[2]'>
               {menus.map((menu, index) => (
                   <button
@@ -45,12 +48,11 @@ const SideBar = () => {
               ))}
           </section>
           <BtnCreate />
-          <BtnConnectWallet className='absolute bottom-10 left-6 w-4/5 z-[2]'/>
           <figure className='absolute bottom-0 left-0 z-[1]'>
-              <Image src={bgSidebar} alt='bg sidebar'/>
+              <Image src={bgSidebar} alt='bg sidebar' />
           </figure>
-    </main>
+      </main>
   )
 }
 
-export default SideBar;
+export default SideBarMobile
