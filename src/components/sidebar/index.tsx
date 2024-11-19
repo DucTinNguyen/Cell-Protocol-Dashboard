@@ -7,6 +7,7 @@ import bgSidebar from '@/images/bg-sidebar.png'
 import BtnConnectWallet from '../button/connect-wallet';
 import { useRouter } from 'next/navigation';
 import { menus } from '@/utils/menu';
+import BtnCreate from '../button/btn-create';
 
 const SideBar = () => {
 
@@ -26,7 +27,7 @@ const SideBar = () => {
               <figure>
                   <Image src={ic_logo} alt='icon logo' width={32} height={32}/>
               </figure>
-              <span className='lg:text-2xl text-[#fff] font-normal'>DEBIO</span>
+              <span className='lg:text-2xl text-[#fff] font-normal'>CELL PROTOCOL</span>
           </section>      
           <section className='mt-10 relative z-[2]'>
               {menus.map((menu: string, index: number) => {
@@ -40,6 +41,7 @@ const SideBar = () => {
                   </button>
               })}
           </section>
+          <BtnCreate />
           <BtnConnectWallet className='absolute bottom-10 left-6 w-4/5 z-[2]'/>
           <figure className='absolute bottom-0 left-0 z-[1]'>
               <Image src={bgSidebar} alt='bg sidebar'/>
