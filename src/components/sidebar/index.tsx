@@ -27,7 +27,7 @@ const SideBar = () => {
               <figure>
                   <Image src={ic_logo} alt='icon logo' width={32} height={32}/>
               </figure>
-              <span className='lg:text-2xl text-[#fff] font-normal'>CELL PROTOCOL</span>
+              <span className='lg:text-xl text-[#fff] font-normal'>CELL PROTOCOL</span>
           </section>      
           <section className='mt-10 relative z-[2]'>
               {menus.map((menu: string, index: number) => {
