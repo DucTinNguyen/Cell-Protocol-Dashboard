@@ -1,18 +1,23 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-    darkMode: ["class"],
-    content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-  	extend: {
-  		backgroundImage: {
+	darkMode: ["class"],
+	content: [
+		"./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+	],
+	theme: {
+		extend: {
+			boxShadow: {
+				'category-tag-active': '0px 0px 0px 2px rgba(0, 0, 0, 0.25), 0px 0px 12px 0px rgba(138, 255, 71, 0.20), 0px 0px 5px 1px rgba(175, 255, 71, 0.50) inset'
+		}	
+  		,backgroundImage: {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
   			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-  			'category-gradient': 'linear-gradient(90deg, rgba(140, 227, 57, 0.40) -5.56%, rgba(140, 227, 57, 0.00) 100%), rgba(255, 255, 255, 0.20)'
+				'category-gradient': 'linear-gradient(90deg, rgba(140, 227, 57, 0.40) -5.56%, rgba(140, 227, 57, 0.00) 100%), rgba(255, 255, 255, 0.20)',
+				'category-tag-active': 'radial-gradient(50.83% 100% at 50% 0%, rgba(138, 255, 71, 0.50) 0%, rgba(59, 153, 43, 0.08) 100%)',
+				'category-tag': 'linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.12) 100%)'
   		},
   		fontFamily: {
   			neueHass: ['var(--font-neueHass)'],
