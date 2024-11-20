@@ -99,6 +99,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                     className="hidden"
                     accept="image/*"
                     onChange={handleChange}
+                    required
                     aria-label="PDF file input"
                 />
 

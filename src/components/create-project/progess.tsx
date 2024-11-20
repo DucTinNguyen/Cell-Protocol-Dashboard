@@ -73,7 +73,6 @@ const ProgressNav: React.FC<ProgressNavProps> = ({
                   ? "text-green-400"
                   : "text-gray-400"
               }`}
-              onClick={() => handleStepClick(item.id)}
             >
               <div
                 className={`

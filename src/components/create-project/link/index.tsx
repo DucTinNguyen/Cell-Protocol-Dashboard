@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import InputSocial from '../input-social'
 import ic_website from '@/images/website.svg'
 import ic_twitter from '@/images/twitter.svg'
@@ -11,10 +11,13 @@ import ic_github from '@/images/github.svg'
 import WhitepaperUpload from '../WhitepaperUpload'
 const LinkStep = ({ step, setCurrentStep }: { step: number, setCurrentStep: (step: number) => void }) => {
 
+  const [formData, setFormData] = useState({
+    contributeLink: '',
+  });
 
-  const handleNext = () => {
-    setCurrentStep(step + 1)
-  }
+  // const handleNext = () => {
+  //   setCurrentStep(step + 1)
+  // }
 
   const handlePrev = () => {
     setCurrentStep(step - 1)
@@ -24,6 +27,28 @@ const LinkStep = ({ step, setCurrentStep }: { step: number, setCurrentStep: (ste
     window.scrollTo(0, 0);
   }, [])
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const isFormValid = () => {
+    return formData.contributeLink.trim() !== '';
+  };
+
+  const handleNext = () => {
+    console.log(formData)
+    if (isFormValid()) {
+      console.log('Form is valid, proceeding...', formData);
+      // Add your navigation logic here
+      setCurrentStep(step + 1)
+    } else {
+      alert('Please fill all required fields');
+    }
+  };
 
 
   return (
@@ -41,16 +66,16 @@ const LinkStep = ({ step, setCurrentStep }: { step: number, setCurrentStep: (ste
               <p className='text-[#798675] text-sm lg:text-lg font-medium text-center'>Please, fill out the information below as the best you can. Include any relevant extra information. Contact a Cell Protocol member with any questions.</p>
       </section>
       <section className='w-full flex flex-col gap-10'>
-        <InputSocial name='contribute link' type='text' placeholder='' required={true} icon={ic_website} />
+        <InputSocial onChange={handleInputChange} name='contributeLink' label='contribute link' type='text' placeholder='' required={true} icon={ic_website} />
         <WhitepaperUpload />
-        <InputSocial name='website' type='text' placeholder='' required={false} icon={ic_website} />
-        <InputSocial name='github' type='text' placeholder='' required={false} icon={ic_github} />
-        <InputSocial name='documentation' type='text' placeholder='' required={false} icon={ic_document} />
-        <InputSocial name='x' type='text' placeholder='' required={false} icon={ic_twitter} />
-        <InputSocial name='discord' type='text' placeholder='' required={false} icon={ic_discord} />
-        <InputSocial name='farcaster' type='text' placeholder='' required={false} icon={ic_farcater} />
-        <InputSocial name='linkedin' type='text' placeholder='' required={false} icon={ic_linkedin} />
-        <InputSocial name='blog' type='text' placeholder='' required={false} icon={ic_blog} />
+        <InputSocial name='website' label='website' type='text' placeholder='' required={false} icon={ic_website} />
+        <InputSocial name='github' label='github' type='text' placeholder='' required={false} icon={ic_github} />
+        <InputSocial name='documentation' label='documentation' type='text' placeholder='' required={false} icon={ic_document} />
+        <InputSocial name='x' type='text' label='x' placeholder='' required={false} icon={ic_twitter} />
+        <InputSocial name='discord' type='text' label='discord' placeholder='' required={false} icon={ic_discord} />
+        <InputSocial name='farcaster' type='text' label='farcaster' placeholder='' required={false} icon={ic_farcater} />
+        <InputSocial name='linkedin' type='text' label='linkedin' placeholder='' required={false} icon={ic_linkedin} />
+        <InputSocial name='blog' type='text' label='blog' placeholder='' required={false} icon={ic_blog} />
       </section>
       <button onClick={handleNext} className="w-full mt-8 bg-[#F7FDFD] rounded-lg py-2 text-[#010D01] uppercase font-semibold">Continue</button>
     </main>

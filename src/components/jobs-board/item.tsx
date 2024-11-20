@@ -5,7 +5,7 @@ import icCalendar from '@/images/ic-calendar.svg'
 import icLocation from '@/images/location.svg'
 import icEmployee from '@/images/employee.svg'
 import icRemote from '@/images/remote.svg'
-import icDebio from '@/images/debio.svg'
+import icCell from '@/images/cell.svg'
 import icApply from '@/images/apply.svg'
 import Image from 'next/image'
 
@@ -37,7 +37,7 @@ const JobBoardItem = ({ job }: { job: Job }) => {
                   <span className='text-sm font-bold text-white'>{job.workMode}</span>
               </div>
               <div className='flex items-center gap-x-2'>
-                  <Image src={icDebio} alt='location' />
+                  <Image src={icCell} alt='location' />
                   <p className=''>
                       <span className='text-sm font-bold block text-white'>{job.company}</span>
                       <span className='text-xs font-semibold text-[#798675]'>Created by <span className='text-xs underline font-semibold text-[#8CE339]'>{job.createdBy}</span></span>
