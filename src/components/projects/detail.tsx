@@ -88,7 +88,7 @@ const ProjectDetail = ({ projectId }: { projectId: number }) => {
 
               <div className='w-full lg:w-[300px] h-fit p-6 z-10 rounded-2xl border border-[rgba(255,255,255,0.12)] bg-[rgba(25,25,25,0.3)] backdrop-blur-sm'>
                   <p className='text-base font-normal font-marbold uppercase text-[#F7FDFD]'>Support {project?.title} </p>
-                  <p className='text-base font-medium text-[#798675] my-3'>Explore and engage with MoonDAO via the provided links.</p>
+                  <p className='text-base font-medium text-[#798675] my-3'>Explore and engage with {project?.title} via the provided links.</p>
                   <button
                       className='w-full h-12 rounded-lg flex items-center justify-center gap-x-1'
                       style={{
