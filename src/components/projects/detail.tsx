@@ -81,7 +81,7 @@ const ProjectDetail = ({ projectId }: { projectId: number }) => {
                     
                   <div>
                       <p className='text-[#F7FDFD] text-base font-normal uppercase font-marbold mb-3'>About</p>
-                      <p className='text-sm font-medium text-[#798675]'>MoonDAO is accelerating our multiplanetary future with a global network and open platform to fund, collaborate, and compete on challenges that get us closer to a lunar settlement.</p>
+                      <p className='text-sm font-medium text-[#798675]'>{project?.title} is accelerating our multiplanetary future with a global network and open platform to fund, collaborate, and compete on challenges that get us closer to a lunar settlement.</p>
                   </div>
 
               </div>
