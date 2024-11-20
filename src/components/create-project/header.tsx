@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import React from 'react'
 import ic_logo from '@/images/logo.svg'
+import ProgressNav from './progess'
 
-const HeadCreateProject = () => {
+const HeadCreateProject = ({ currentStep, setCurrentStep }: { currentStep: number, setCurrentStep: (value: number)=> void }) => {
   return (
       <main className='w-full h-20 py-4 bg-[#000000] flex items-center'>
         <section className='w-full lg:max-w-[1200px] mx-auto flex items-center justify-between'>
@@ -12,6 +13,9 @@ const HeadCreateProject = () => {
                   </figure>
                   <span className='lg:text-xl text-[#fff] font-normal font-marbold'>CELL PROTOCOL</span>
               </section>  
+              <div>
+                  <ProgressNav currentStep={currentStep} setCurrentStep={setCurrentStep}/>
+              </div>
               <figure className='cursor-pointer'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                       <rect width="40" height="40" rx="10" fill="url(#paint0_linear_51_1850)" fill-opacity="0.2" />

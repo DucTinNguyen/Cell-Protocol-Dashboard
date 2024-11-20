@@ -1,9 +1,20 @@
+import { useEffect } from "react"
 import InputWithLabel from "../input-label"
 import { TextareaWithLabel } from "../text-area"
 import Category from "./category"
 import GeographicLocation from "./location"
 
-const DetailStep = () => {
+const DetailStep = ({ step ,setCurrentStep }: { step: number ,setCurrentStep: (step: number) => void }) => {
+  
+  const handleNext = () => {
+    setCurrentStep(step + 1)
+  }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
+
   return (
     <main className='text-white'>
         <section className='w-full lg:w-[622px] mx-auto px-4 lg:px-0 py-10 lg:py-20'>
@@ -16,7 +27,7 @@ const DetailStep = () => {
               <TextareaWithLabel name="Project description*" type="text" required={false} placeholder="What is the project about and what kind of impact does it aim to have?" />
           <Category />
         <GeographicLocation />
-        <button className="w-ful bg-[#F7FDFD] rounded-lg py-2 text-[#010D01] uppercase font-semibold">Continue</button>
+        <button onClick={handleNext} className="w-ful bg-[#F7FDFD] rounded-lg py-2 text-[#010D01] uppercase font-semibold">Continue</button>
         </section>
     </main>
   )
