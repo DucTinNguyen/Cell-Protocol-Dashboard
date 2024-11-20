@@ -44,6 +44,7 @@ export default function RootLayout({
         <meta property="og:image" content="./opengraph-image.png"></meta>
         <meta property="og:url" content="https://dashboard.cellprotocol.science"></meta>
         <meta property="og:title" content="THE FUTURE OF DECENTRALIZED SCIENCE"></meta>
+        <meta property="og:site_name" content="https://dashboard.cellprotocol.science"></meta>
         <meta
           property="og:description"
           content="Discover the next wave of research: blockchain powered and boundless"
