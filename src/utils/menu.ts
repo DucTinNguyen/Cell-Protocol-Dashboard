@@ -6,7 +6,7 @@ export const menus = [
     { title: 'home', hash: 'home', disable: true },
     { title: 'projects', hash: 'projects' , disable: false},
     { title: 'event calendar', hash: 'event-calendar', disable: true },
-    { title: 'deBio map', hash: 'debio-map', disable: true },
+    { title: 'map', hash: 'map', disable: true },
     { title: 'job board', hash: 'job-board', disable: false  },
     { title: 'nfts', hash: 'nfts', disable: true },
     { title: 'app store', hash: 'app-store', disable: true },

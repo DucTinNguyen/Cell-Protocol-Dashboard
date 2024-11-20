@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import bgDetail from '@/images/bg-detail.png'
 import Image from 'next/image'
 import { products } from '@/utils/project'
@@ -28,6 +28,10 @@ const ProjectDetail = ({ projectId }: { projectId: number }) => {
     const handleBack = () => { 
         router.push(`?tab=project`)
     }
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
 
 
   return (
@@ -73,7 +77,7 @@ const ProjectDetail = ({ projectId }: { projectId: number }) => {
                           )
                       })}
                   </div>
-                  <CarouselProjectDetail />
+                  <CarouselProjectDetail list={ project?.gallery || []} />
                     
                   <div>
                       <p className='text-[#F7FDFD] text-base font-normal uppercase font-marbold mb-3'>About</p>
@@ -83,7 +87,7 @@ const ProjectDetail = ({ projectId }: { projectId: number }) => {
               </div>
 
               <div className='w-full lg:w-[300px] h-fit p-6 z-10 rounded-2xl border border-[rgba(255,255,255,0.12)] bg-[rgba(25,25,25,0.3)] backdrop-blur-sm'>
-                  <p className='text-base font-normal font-marbold uppercase text-[#F7FDFD]'>Support MoonDAO</p>
+                  <p className='text-base font-normal font-marbold uppercase text-[#F7FDFD]'>Support {project?.title} </p>
                   <p className='text-base font-medium text-[#798675] my-3'>Explore and engage with MoonDAO via the provided links.</p>
                   <button
                       className='w-full h-12 rounded-lg flex items-center justify-center gap-x-1'
@@ -91,7 +95,7 @@ const ProjectDetail = ({ projectId }: { projectId: number }) => {
                           background: 'linear-gradient(0deg, #DFFBBF 0%, #D3FF33 27.6%, #65CF21 110.42%)'
                   }}
                   >
-                      <span className='text-[#0C2504] text-sm font-semibold'>Contribute</span>
+                      <a href='https://pump.fun/board' target='_blank' className='text-[#0C2504] text-sm font-semibold'>Pump.fun</a>
                       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                           <path d="M7.37644 1.10776C7.09077 0.807811 6.61604 0.796232 6.31609 1.0819C6.01614 1.36756 6.00457 1.84229 6.29023 2.14224L7.37644 1.10776ZM11 6L11.5431 6.51724C11.819 6.22759 11.819 5.77241 11.5431 5.48276L11 6ZM6.29023 9.85776C6.00457 10.1577 6.01614 10.6324 6.31609 10.9181C6.61604 11.2038 7.09077 11.1922 7.37644 10.8922L6.29023 9.85776ZM1 5.25L0.25 5.25L0.25 6.75L1 6.75L1 5.25ZM6.29023 2.14224L10.4569 6.51724L11.5431 5.48276L7.37644 1.10776L6.29023 2.14224ZM10.4569 5.48276L6.29023 9.85776L7.37644 10.8922L11.5431 6.51724L10.4569 5.48276ZM11 5.25L1 5.25L1 6.75L11 6.75L11 5.25Z" fill="black" />
                       </svg>

@@ -14,12 +14,12 @@ import detail1 from '@/images/projects/detail1.png'
 import detail2 from '@/images/projects/detail2.png'
 import detail3 from '@/images/projects/detail3.png'
 import detail4 from '@/images/projects/detail4.png'
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 
 
 const arrayImages = [ detail1, detail2, detail3, detail4]
 
-export function CarouselProjectDetail() {
+export function CarouselProjectDetail({list}: {list: StaticImageData []}) {
     const [api, setApi] = React.useState<CarouselApi>()
     const [current, setCurrent] = React.useState(0)
     const [count, setCount] = React.useState(0)
@@ -47,9 +47,9 @@ export function CarouselProjectDetail() {
                 }} className="backdrop-blur-[50px] absolute w-full h-full left-0 top-0"></div>
                 <Carousel setApi={setApi} className="w-[250px] h-[277px] flex items-center lg:w-[552px] lg:h-[384px] mx-auto relative">
                     <CarouselContent>
-                        {arrayImages.map((_, index) => (
+                        {list.map((_, index) => (
                             <CarouselItem key={index}>
-                                <Image className="w-full h-full"  src={arrayImages[current-1]} alt="image" />
+                                <Image className="w-full h-full"  src={list[current-1]} alt="image" />
                             </CarouselItem>
                         ))}
                     </CarouselContent>
@@ -59,7 +59,7 @@ export function CarouselProjectDetail() {
             </section>
             
             <div className="flex items-center gap-x-2 mt-6">
-                {arrayImages.map((item, index) => {
+                {list.map((item, index) => {
                     return (
                         <section onClick={()=>{setCurrent(index +1)}} key={index} className={`${index === current - 1 ? 'border-[#D3FF33]' : 'border-transparent'} border w-[127px] h-[88px] rounded-lg overflow-hidden relative flex items-center justify-center`}>
                             <Image src={item} alt="image" fill />

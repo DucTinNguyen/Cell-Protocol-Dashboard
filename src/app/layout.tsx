@@ -18,7 +18,7 @@ import AppWalletProvider from "@/providers/wallet.provider";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-  title: "DeBio",
+  title: "Cell Protocol",
 };
 
 export default function RootLayout({

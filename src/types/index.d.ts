@@ -15,6 +15,7 @@ export interface IProduct {
     title: string;
     desc: string;
     category: string[];
+    gallery: StaticImageData []
 }
 
 export interface Job {

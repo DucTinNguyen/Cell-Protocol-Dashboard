@@ -40,7 +40,7 @@ const Projects = () => {
       logo: avatar,
       type: "CoopHive",
       title: "Trading floor for autonomous agents",
-      desc: "DeBio is the next evolution of research; onchain, unstoppable and powered by the most cutting-edge technology.",
+      desc: "Cell Protocol is the next evolution of research; onchain, unstoppable and powered by the most cutting-edge technology.",
       category: ["AI", "Computer", "Science Defi"],
     },
     {
@@ -48,7 +48,7 @@ const Projects = () => {
       logo: avatar,
       type: "CoopHive",
       title: "Trading floor for autonomous agents",
-      desc: "DeBio is the next evolution of research; onchain, unstoppable and powered by the most cutting-edge technology.",
+      desc: "Cell Protocol is the next evolution of research; onchain, unstoppable and powered by the most cutting-edge technology.",
       category: ["AI", "Computer", "Science Defi"],
     },
   ];
@@ -68,8 +68,8 @@ const Projects = () => {
           </span>
         </div>
         <p className="text-[#798675] text-sm font-semibold mt-4">
-          Filter and interact with the world of DeBio. All projects are listed
-          by communities and approved by DeBioWorld.
+          Filter and interact with the world of Cell Protocol . All projects are listed
+          by communities and approved by Cell Protocol World.
         </p>
       </section>
       {/* TODO */}

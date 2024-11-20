@@ -18,7 +18,7 @@ const JobBoard = () => {
       logo: avatar,
       type: "CoopHive",
       title: "Staff front end engineer",
-      desc: `We are seeking a passionate and detail-oriented Front-End Engineer to develop and maintain high-quality user interfaces for DeBio's web applications. You will collaborate closely with our design and backend teams to create responsive, intuitive, and visually appealing web experiences. `,
+      desc: `We are seeking a passionate and detail-oriented Front-End Engineer to develop and maintain high-quality user interfaces for Cell Protocol's web applications. You will collaborate closely with our design and backend teams to create responsive, intuitive, and visually appealing web experiences. `,
       category: ["New York, United State", "Employee", "Hybrid"],
     },
     {
@@ -26,7 +26,7 @@ const JobBoard = () => {
       logo: avatar,
       type: "CoopHive",
       title: "Staff back end engineer",
-      desc: `We are seeking a passionate and detail-oriented Front-End Engineer to develop and maintain high-quality user interfaces for DeBio's web applications. You will collaborate closely with our design and backend teams to create responsive, intuitive, and visually appealing web experiences. `,
+      desc: `We are seeking a passionate and detail-oriented Front-End Engineer to develop and maintain high-quality user interfaces for Cell Protocol's web applications. You will collaborate closely with our design and backend teams to create responsive, intuitive, and visually appealing web experiences. `,
       category: ["New York, United State", "Employee", "Hybrid"],
     },
   ];
@@ -36,11 +36,11 @@ const JobBoard = () => {
       title: "VIDEO EDITOR",
       date: "18 NOV, 2024",
       description:
-        "We are seeking a creative and experienced Video Editor to produce high-quality video content that supports DeBio's branding and marketing campaign...",
+        "We are seeking a creative and experienced Video Editor to produce high-quality video content that supports Cell Protocol's branding and marketing campaign...",
       location: "Global, United Kingdom",
       type: "Employee",
       workMode: "Remote",
-      company: "DEBIOWORLD",
+      company: "Cell Protocol",
       createdBy: "Jack",
       applyLink: "#",
     },
@@ -52,7 +52,7 @@ const JobBoard = () => {
       location: "Global, Singapore",
       type: "Employee",
       workMode: "Remote",
-      company: "DEBIOWORLD",
+      company: "Cell Protocol",
       createdBy: "Sarah",
       applyLink: "#",
     },
@@ -64,7 +64,7 @@ const JobBoard = () => {
       location: "Global, Germany",
       type: "Employee",
       workMode: "Remote",
-      company: "DEBIOWORLD",
+      company: "Cell Protocol",
       createdBy: "Mike",
       applyLink: "#",
     },
@@ -86,7 +86,7 @@ const JobBoard = () => {
         </div>
         <p className="text-[#798675] text-sm font-semibold mt-4">
           Find trusted work opportunities and work with the best companies in
-          DeBio. Applications for listed jobs are currently facilitated through
+          Cell Protocol. Applications for listed jobs are currently facilitated through
           external links.
         </p>
       </section>
