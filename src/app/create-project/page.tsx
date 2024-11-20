@@ -3,6 +3,7 @@ import HeadCreateProject from '@/components/create-project/header'
 import LinkStep from '@/components/create-project/link'
 import MediaStep from '@/components/create-project/media'
 import Member from '@/components/create-project/member'
+import ResourceStep from '@/components/create-project/resources'
 import WrapBodyContent from '@/components/create-project/wrap-body'
 import React from 'react'
 
@@ -14,7 +15,8 @@ const CreateProject = () => {
             {/* <DetailStep /> */}
         {/* <LinkStep /> */}
         {/* <MediaStep /> */}
-        <Member />
+        {/* <Member /> */}
+          <ResourceStep />
           </WrapBodyContent>
     </main>
   )
