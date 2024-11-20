@@ -12,7 +12,7 @@ const ProjectItem = ({ product }: { product: IProduct }) => {
   return (
       <main
           onClick={()=>{router.push(`?tab=projects&id=${product.id}`)}}
-          className='h-[312px] flex flex-col rounded-lg cursor-pointer'>
+          className='h-[312px] flex flex-col rounded-lg overflow-hidden cursor-pointer'>
           <figure className='w-full h-[120px]'>
               <Image src={product.thumbnail} className='w-full h-full' alt='item'/>
           </figure>   
