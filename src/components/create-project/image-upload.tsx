@@ -7,7 +7,7 @@ import icRemove from '@/images/remove-media.svg'
 interface ImageUploadProps {
     onFileUpload?: (file: File) => void;
     maxSizeInMB?: number;
-    type?: "logo" | "cover" | "media";
+    type?: "logo" | "cover" | "media" | "member";
     label: string;
     subtitle?: string;
 }
@@ -134,6 +134,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                             {type === 'logo' && <ImageLogoUploaded file={file} handleRemoveFile={handleRemoveFile} />}
                             {type === 'cover' && <CoverLogoUploaded file={file} handleRemoveFile={handleRemoveFile} />} 
                             {type === 'media' && <MediaLogoUploaded file={file} handleRemoveFile={handleRemoveFile} />}
+                            {type === 'member' && <ImageMemberUploaded file={file} handleRemoveFile={handleRemoveFile} />}
                         </>
                     ) : (
                         <div>
@@ -141,6 +142,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                                 {type === "logo" && "Click to Upload or Drag and Drop Logo"}
                                 {type === "cover" && "Click to Upload or Drag and Drop Cover Image"}
                                 {type === "media" && "Click to Upload or Drag and Drop Media Images"}
+                                {type === "member" && "Click to Upload or Drag and Drop Profile Picture"}
                             </p>
                             <p className="text-[#798675] text-sm text-center">
                                 {type === "logo" &&
@@ -148,7 +150,9 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                                 {type === "cover" &&
                                     `Recommended dimensions: 1500x400   Max size of ${maxSizeInMB}MB`}
                                 {type === "media" &&
-                                    `Recommended dimensions: 1200x1200  Max size of ${maxSizeInMB}MB`}
+                                        `Recommended dimensions: 1200x1200  Max size of ${maxSizeInMB}MB`}
+                                {type === "member" &&
+                                        `Recommended dimensions: 500x500  | Max size of ${maxSizeInMB}MB`}
                             </p>
                         </div>
                     )}
@@ -172,6 +176,27 @@ const ImageLogoUploaded = ({ file, handleRemoveFile }: { file: File, handleRemov
             <div>
                 <p className="text-[#F7FDFD] text-base font-semibold">Upload an image to represent the project</p>
                 <ul className="flex flex-col list-disc pl-4 ">
+                    <li className="text-[#798675] text-sm font-normal">Recommended dimensions: 500x500</li>
+                    <li className="text-[#798675] text-sm font-normal">Max size of 2MB</li>
+                </ul>
+                <button onClick={handleRemoveFile} className="border border-[#8CE339] rounded-lg py-2 px-3 text-[#8CE339] text-sm font-semibold mt-2">Remove</button>
+            </div>
+        </section>
+    )
+}
+
+const ImageMemberUploaded = ({ file, handleRemoveFile }: { file: File, handleRemoveFile: (e: React.MouseEvent<HTMLButtonElement>) => void }) => {
+
+    const previewUrl = URL.createObjectURL(file);
+
+    return (
+        <section className="flex flex-col lg:flex-row items-start gap-4 justify-start">
+            <figure className="w-20 h-20 lg:w-[120px] lg:h-[120px] rounded-xl border border-[#3C3C3C] p-2">
+                <Image src={previewUrl} alt="preview" width={0} height={0} sizes="100vw" className="w-full h-full" />
+            </figure>
+            <div>
+                <p className="text-[#F7FDFD] text-base font-semibold">Upload an image to represent the project</p>
+                <ul className="flex flex-col list-disc pl-4 ">
                     <li className="text-[#798675] text-sm font-normal">Recommended dimensions: 1200x1200</li>
                     <li className="text-[#798675] text-sm font-normal">Max size of 2MB</li>
                 </ul>
@@ -180,6 +205,7 @@ const ImageLogoUploaded = ({ file, handleRemoveFile }: { file: File, handleRemov
         </section>
     )
 }
+
 
 const CoverLogoUploaded = ({ file, handleRemoveFile }: { file: File, handleRemoveFile: (e: React.MouseEvent<HTMLButtonElement>) => void }) => {
 
